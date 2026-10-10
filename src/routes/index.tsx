@@ -3,17 +3,13 @@ import { useState, type ReactNode } from "react";
 import {
   ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Coins, Eye,
   MapPin, Menu, Phone, ShieldCheck, Users, X, MessageCircle, Instagram,
-  Facebook, Clock3,
+  Facebook,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({ component: Index });
 
 const PHONE = "03006913585";
 const WHATSAPP = "https://wa.me/923006913585";
-const services = [
-  "Comprehensive Eye Examination", "Cataract Surgery", "Glaucoma Screening",
-  "Children’s Eye Care", "Diabetic Eye Examination", "Retina Consultation",
-];
 const faqs = [
   { q: "What is cataract and how is it treated?", a: "A cataract is clouding of the eye’s natural lens that can make vision blurry. After an eye examination, cataract surgery may be recommended when it begins to affect daily activities." },
   { q: "How much does cataract surgery cost?", a: "Cataract surgery prices start from PKR 25,000, depending on the lens selected and your individual treatment needs. Our team can explain suitable options after an assessment." },
