@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Coins, Eye,
   MapPin, Menu, Phone, ShieldCheck, Users, X, MessageCircle, Instagram,
@@ -32,7 +32,7 @@ function Brand({ light = false }: { light?: boolean }) {
     <span className="brand-words"><strong>NOVA</strong><small>EYE CENTRE</small></span>
   </a>;
 }
-function WhatsAppButton({ children = "Book on WhatsApp", className = "" }: { children?: React.ReactNode; className?: string }) {
+function WhatsAppButton({ children = "Book on WhatsApp", className = "" }: { children?: ReactNode; className?: string }) {
   return <a className={`btn btn-green ${className}`} href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={18} />{children}</a>;
 }
 function PhoneButton({ children = "Call for Appointment", className = "" }: { children?: React.ReactNode; className?: string }) {
@@ -91,7 +91,7 @@ function Index() {
     </section>
 
     <section className="services-intro" id="services"><span className="eyebrow">OUR SERVICES</span><h2>Comprehensive Eye Care for All Ages</h2><p>From routine checkups to advanced treatments, we provide complete eye care under one roof.</p><a className="btn btn-blue" href="#all-services">View All Services <ArrowRight size={16} /></a></section>
-    <section className="featured-service split-section" id="all-services"><div className="featured-copy"><span className="eyebrow">FEATURED SERVICE</span><h2>Cataract Surgery</h2><p>Modern and safe cataract surgery options to help you see clearly again. Various lens options are available to suit your needs and budget.</p><a className="btn btn-blue" href="#cataract">Learn More <ArrowRight size={16} /></a></div><div className="eye-closeup"><img src="https://images.unsplash.com/photo-眼睛?auto=format&fit=crop&w=1200&q=90" onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1530128118208-89f6ce02b37b?auto=format&fit=crop&w=1200&q=90"; }} alt="Close-up of an eye" /></div></section>
+    <section className="featured-service split-section" id="all-services"><div className="featured-copy"><span className="eyebrow">FEATURED SERVICE</span><h2>Cataract Surgery</h2><p>Modern and safe cataract surgery options to help you see clearly again. Various lens options are available to suit your needs and budget.</p><a className="btn btn-blue" href="#cataract">Learn More <ArrowRight size={16} /></a></div><div className="eye-closeup"><img src="https://images.unsplash.com/photo-1530128118208-89f6ce02b37b?auto=format&fit=crop&w=1200&q=90" onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1530128118208-89f6ce02b37b?auto=format&fit=crop&w=1200&q=90"; }} alt="Close-up of an eye" /></div></section>
 
     <section className="why-section"><span className="eyebrow">WHY CHOOSE NOVA EYE CENTRE?</span><h2>Care that puts you first</h2><p>We are committed to providing high-quality, affordable and patient-focused eye care.</p><div className="benefits">
       <article><span><Users /></span><h3>Experienced Team</h3><p>Almost 5 years of<br />experience in eye care</p></article>
