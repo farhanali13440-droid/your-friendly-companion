@@ -387,7 +387,7 @@ export function Pricing() {
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Heading eyebrow="Consultation Fee" title="Take the First Step Toward Understanding Your Mental Health.">
-            <p>A clear, one-time consultation fee. No hidden steps — simply message our team on WhatsApp and we'll guide you through booking.</p>
+            <p>A clear consultation fee. Simply message our team on WhatsApp and we'll guide you through the booking process.</p>
           </Heading>
           <ul className="mt-8 space-y-4">
             {[
