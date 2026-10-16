@@ -155,3 +155,13 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 section[id] { scroll-margin-top: 5rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+:root {
+  --shadow-soft: 0 1px 2px color-mix(in oklab, var(--primary) 6%, transparent), 0 8px 24px -12px color-mix(in oklab, var(--primary) 18%, transparent);
+  --shadow-elegant: 0 40px 80px -40px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+@theme inline {
+  --shadow-soft: var(--shadow-soft);
+  --shadow-elegant: var(--shadow-elegant);
+}
+h1, h2, h3 { font-feature-settings: "ss01", "cv11"; }
