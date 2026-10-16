@@ -267,13 +267,13 @@ export function Options() {
             <div className="flex gap-3"><dt className="sr-only">Location</dt><MapPin className="mt-0.5 size-5 shrink-0 text-accent" /><dd>{CLINIC}</dd></div>
             <div className="flex gap-3"><dt className="sr-only">Availability</dt><Clock className="mt-0.5 size-5 shrink-0 text-accent" /><dd>Monday, Wednesday, Friday<br />6:00 PM–9:00 PM</dd></div>
           </dl>
-          <WaButton message="clinic" className="mt-auto pt-0 [margin-top:2rem]">Ask About In-Clinic Appointments</WaButton>
+          <WaButton message="clinic" className="mt-8 self-start">Ask About In-Clinic Appointments</WaButton>
         </article>
         <article className="flex flex-col rounded-3xl border border-primary bg-primary p-8 text-primary-foreground">
           <span className="flex size-12 items-center justify-center rounded-2xl bg-primary-foreground/10"><Video className="size-6" /></span>
           <h3 className="mt-6 text-2xl font-extrabold">Online Consultation</h3>
           <p className="mt-5 leading-relaxed text-primary-foreground/80">Explore online psychiatric consultation options from Pakistan or internationally, subject to appointment availability.</p>
-          <WaButton message="online" variant="light" className="[margin-top:2rem] mt-auto">Ask About Online Consultation</WaButton>
+          <WaButton message="online" variant="light" className="mt-8 self-start">Ask About Online Consultation</WaButton>
         </article>
       </div>
     </Section>
