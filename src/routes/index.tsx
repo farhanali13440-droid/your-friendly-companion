@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Header, Hero, PainPoints, Empathy, Doctor, Conditions, Process, Options, Pricing,
+  Header, Hero, TrustBar, PainPoints, Empathy, Doctor, Conditions, Process, Options, Pricing,
   Credentials, Faq, FinalCta, Footer, StickyWhatsApp,
 } from "@/components/landing/sections";
 
@@ -28,6 +28,7 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <TrustBar />
         <PainPoints />
         <Empathy />
         <Doctor />
