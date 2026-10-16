@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Header, Hero, PainPoints, Empathy, Doctor, Conditions, Process, Options, Pricing,
-  Credentials, Faq, Resources, FinalCta, Footer, StickyWhatsApp,
+  Credentials, Faq, FinalCta, Footer, StickyWhatsApp,
 } from "@/components/landing/sections";
 
 const TITLE = "Dr. Mohsin Mehmood | Consultant Psychiatrist – Book a Consultation";
@@ -37,7 +37,6 @@ function Index() {
         <Pricing />
         <Credentials />
         <Faq />
-        <Resources />
         <FinalCta />
       </main>
       <Footer />
