@@ -6,11 +6,11 @@ import { whatsappLink, type WaMessage } from "@/lib/whatsapp";
 type Variant = "primary" | "whatsapp" | "outline" | "light" | "ghost-light";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-primary text-primary-foreground hover:bg-accent shadow-sm",
-  whatsapp: "bg-whatsapp text-whatsapp-foreground hover:brightness-95 shadow-sm",
-  outline: "border border-border bg-background text-primary hover:border-accent hover:bg-secondary",
+  primary: "bg-primary text-primary-foreground hover:bg-accent shadow-soft",
+  whatsapp: "bg-whatsapp text-whatsapp-foreground hover:brightness-95 shadow-soft",
+  outline: "border border-border bg-background text-primary hover:border-accent/50 hover:bg-secondary",
   light: "bg-background text-primary hover:bg-secondary",
-  "ghost-light": "border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10",
+  "ghost-light": "border border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10",
 };
 
 export function WaButton({
@@ -32,14 +32,16 @@ export function WaButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        "group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-7 text-[15px] font-semibold tracking-[-0.005em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         variants[variant],
         className,
       )}
     >
       {icon === "chat" && <MessageCircle className="size-[18px]" aria-hidden />}
       {children}
-      {icon === "arrow" && <ArrowRight className="size-4" aria-hidden />}
+      {icon === "arrow" && (
+        <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />
+      )}
     </a>
   );
 }
@@ -60,27 +62,36 @@ export function Section({
   );
 }
 
+export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <p className={cn("mb-4 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.22em] text-accent", className)}>
+      <span aria-hidden className="h-px w-6 bg-accent/60" />
+      {children}
+    </p>
+  );
+}
+
 export function Heading({
   eyebrow,
   title,
   children,
   center = false,
+  className,
 }: {
   eyebrow?: string;
   title: ReactNode;
   children?: ReactNode;
   center?: boolean;
+  className?: string;
 }) {
   return (
-    <div className={cn("max-w-3xl", center && "mx-auto text-center")}>
-      {eyebrow && (
-        <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
-      )}
-      <h2 className="text-balance text-3xl font-extrabold leading-[1.15] tracking-tight text-primary md:text-[2.6rem]">
+    <div className={cn("max-w-3xl", center && "mx-auto text-center", className)}>
+      {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+      <h2 className="text-balance text-[1.9rem] font-bold leading-[1.15] tracking-[-0.025em] text-primary md:text-[2.5rem]">
         {title}
       </h2>
       {children && (
-        <div className="mt-5 space-y-4 text-lg leading-relaxed text-muted-foreground">{children}</div>
+        <div className="mt-5 space-y-4 text-[17px] leading-[1.7] text-muted-foreground">{children}</div>
       )}
     </div>
   );
@@ -91,18 +102,22 @@ export function DoctorPhoto({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden rounded-3xl border border-border bg-secondary",
+        "relative flex aspect-[4/5] w-full flex-col items-center justify-center overflow-hidden rounded-[28px] bg-primary text-primary-foreground",
         className,
       )}
       role="img"
       aria-label="Photograph of Dr. Mohsin Mehmood (placeholder)"
     >
-      <svg viewBox="0 0 200 250" className="absolute inset-0 h-full w-full text-accent/15" aria-hidden>
-        <circle cx="100" cy="95" r="42" fill="currentColor" />
-        <path d="M20 250c6-60 40-92 80-92s74 32 80 92z" fill="currentColor" />
+      <svg aria-hidden viewBox="0 0 400 500" className="absolute inset-0 h-full w-full text-primary-foreground/[0.07]" fill="none">
+        {[80, 130, 180, 230, 280].map((r) => (
+          <circle key={r} cx="200" cy="200" r={r} stroke="currentColor" strokeWidth="1" />
+        ))}
       </svg>
-      <span className="relative mt-auto mb-6 rounded-full bg-background/90 px-4 py-1.5 text-xs font-medium text-muted-foreground">
-        Doctor's photograph
+      <span className="relative flex size-28 items-center justify-center rounded-full border border-primary-foreground/25 text-4xl font-light tracking-[0.08em]">
+        MM
+      </span>
+      <span className="relative mt-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-primary-foreground/60">
+        Photo coming soon
       </span>
     </div>
   );
