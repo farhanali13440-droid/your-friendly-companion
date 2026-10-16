@@ -78,20 +78,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NOVA Eye Centre | Expert Eye Care in Sahiwal & Pakpattan" },
-      { name: "description", content: "Modern, affordable eye care and cataract surgery at NOVA Eye Centre in Sahiwal and Pakpattan. Book an eye checkup for PKR 200." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "NOVA Eye Centre | Expert Eye Care" },
-      { property: "og:description", content: "Modern and compassionate eye care in Sahiwal and Pakpattan." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
